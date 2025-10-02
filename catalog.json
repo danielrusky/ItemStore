@@ -1,0 +1,322 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Ferrari",
+      "description": "Ferrari",
+      "created_at": "2025-04-21T13:55:43Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Nissan",
+      "description": "Nissan",
+      "created_at": "2025-04-21T13:55:58Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Toyota",
+      "description": "Toyota",
+      "created_at": "2025-04-21T13:56:27Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Porsche",
+      "description": "Porsche",
+      "created_at": "2025-04-21T13:56:43Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Ferrari 296",
+      "description": "Ferrari 296",
+      "image": "img/Ferrari_296.jpg",
+      "category": 1,
+      "price": 1453534534,
+      "date_created": "2025-04-21T13:58:29.511Z",
+      "date_modified": "2025-01-17T03:27:55Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Ferrari Purosangue",
+      "description": "Ferrari Purosangue",
+      "image": "img/Ferrari_Purosangue.jpg",
+      "category": 1,
+      "price": 1453534534,
+      "date_created": "2025-04-21T13:59:19.283Z",
+      "date_modified": "2025-04-21T13:59:16Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Ferrari Roma",
+      "description": "Ferrari Roma",
+      "image": "img/Ferrari_Roma.jpg",
+      "category": 1,
+      "price": 1453534534,
+      "date_created": "2025-04-21T13:59:54.549Z",
+      "date_modified": "2025-04-21T13:59:53Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Ferrari SF90",
+      "description": "Ferrari SF90",
+      "image": "img/Ferrari_SF90.jpg",
+      "category": 1,
+      "price": 1453534534,
+      "date_created": "2025-04-21T14:00:42.326Z",
+      "date_modified": "2025-04-21T14:00:39Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "Nissan Fairlady",
+      "description": "Nissan Fairlady",
+      "image": "img/Nissan_Fairlady.jpg",
+      "category": 2,
+      "price": 1453534534,
+      "date_created": "2025-04-21T14:01:19.740Z",
+      "date_modified": "2025-04-21T14:00:39Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "Nissan GTR",
+      "description": "Nissan GTR",
+      "image": "img/Nissan_GT-R.jpg",
+      "category": 2,
+      "price": 1453534534,
+      "date_created": "2025-04-21T14:01:59.700Z",
+      "date_modified": "2025-04-21T14:01:58Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "Nissan Silvia",
+      "description": "Nissan Silvia",
+      "image": "img/Nissan_Silvia.jpg",
+      "category": 2,
+      "price": 1453534534,
+      "date_created": "2025-04-21T14:02:27.334Z",
+      "date_modified": "2025-04-21T14:02:24Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "name": "Nissan Z",
+      "description": "Nissan Z",
+      "image": "img/Nissan_Z.jpg",
+      "category": 2,
+      "price": 1453534534,
+      "date_created": "2025-04-21T14:02:52.740Z",
+      "date_modified": "2025-04-21T14:02:24Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "name": "Porsche 718 Spyder",
+      "description": "Porsche 718 Spyder",
+      "image": "img/Porsche_718_Spyder.jpg",
+      "category": 4,
+      "price": 1453534534,
+      "date_created": "2025-04-21T14:03:19.925Z",
+      "date_modified": "2025-04-21T14:02:24Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+      "name": "Porsche 911 GT2",
+      "description": "Porsche 911 GT2",
+      "image": "img/Porsche_911_GT2.jpg",
+      "category": 4,
+      "price": 1453534534,
+      "date_created": "2025-04-21T14:03:54.512Z",
+      "date_modified": "2025-04-21T14:02:24Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 11,
+    "fields": {
+      "name": "Porsche Macan",
+      "description": "Porsche Macan",
+      "image": "img/Porsche_Macan.jpg",
+      "category": 4,
+      "price": 1453534534,
+      "date_created": "2025-04-21T14:04:21.226Z",
+      "date_modified": "2025-04-21T14:02:24Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+      "name": "Porsche Panamera",
+      "description": "Porsche Panamera",
+      "image": "img/Porsche_Panamera.jpg",
+      "category": 4,
+      "price": 1453534534,
+      "date_created": "2025-04-21T14:04:50.646Z",
+      "date_modified": "2025-04-21T14:02:24Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 13,
+    "fields": {
+      "name": "Toyota Camry",
+      "description": "Toyota Camry",
+      "image": "img/Toyota_Camry.jpg",
+      "category": 3,
+      "price": 1453534534,
+      "date_created": "2025-04-21T14:05:27.474Z",
+      "date_modified": "2025-04-21T14:02:24Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 14,
+    "fields": {
+      "name": "Toyota GT86",
+      "description": "Toyota GT86",
+      "image": "img/Toyota_GT86.jpg",
+      "category": 3,
+      "price": 1453534534,
+      "date_created": "2025-04-21T14:06:00.391Z",
+      "date_modified": "2025-04-21T14:02:24Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 15,
+    "fields": {
+      "name": "Toyota Mirai",
+      "description": "Toyota Mirai",
+      "image": "img/Toyota_Mirai.jpg",
+      "category": 3,
+      "price": 1453534534,
+      "date_created": "2025-04-21T14:06:32.837Z",
+      "date_modified": "2025-04-21T14:02:24Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 16,
+    "fields": {
+      "name": "Toyota Tundra",
+      "description": "Toyota Tundra",
+      "image": "img/Toyota_Tundra.jpg",
+      "category": 3,
+      "price": 1453534534,
+      "date_created": "2025-04-21T14:07:00.752Z",
+      "date_modified": "2025-04-21T14:02:24Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.contacts",
+    "pk": 1,
+    "fields": {
+      "name": "Danila Kharchenko",
+      "phone": "+79775126865",
+      "message": "Hello",
+      "avatar": "contacts/Ferrari_296.jpg"
+    }
+  },
+  {
+    "model": "catalog.contacts",
+    "pk": 2,
+    "fields": {
+      "name": "Georgiy Pobedonosets",
+      "phone": "+79879993848",
+      "message": "Underground",
+      "avatar": "contacts/Nissan_Silvia.jpg"
+    }
+  },
+  {
+    "model": "catalog.contacts",
+    "pk": 3,
+    "fields": {
+      "name": "Hensvord Unerveslow",
+      "phone": "+89992321121",
+      "message": "Unilevos",
+      "avatar": "contacts/Nissan_Z.jpg"
+    }
+  },
+  {
+    "model": "catalog.contacts",
+    "pk": 4,
+    "fields": {
+      "name": "Eduard Alekseev",
+      "phone": "+79876654534",
+      "message": "Good afternoon",
+      "avatar": "contacts/Toyota_Camry.jpg"
+    }
+  },
+  {
+    "model": "catalog.contacts",
+    "pk": 5,
+    "fields": {
+      "name": "Petrenko",
+      "phone": "+79778787667",
+      "message": "Hello",
+      "avatar": ""
+    }
+  },
+  {
+    "model": "catalog.contacts",
+    "pk": 7,
+    "fields": {
+      "name": "Eduard Alekseev",
+      "phone": "+79153687613",
+      "message": "Hello",
+      "avatar": ""
+    }
+  }
+]

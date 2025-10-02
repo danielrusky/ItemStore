@@ -1,0 +1,36 @@
+{% extends 'catalog/base.html' %}
+{% load media_tager %}
+{% block content %}
+    <div class="col-12 mb-5">
+        <a class="btn btn-outline-primary" href="{% url 'materials:create_material' %}">Добавить материалы</a>
+    </div>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+        {% for object in object_list %}
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <p class="card-text">
+                        {{ object|title }}
+                    </p>
+                    <img src="{% media_tager object.image %}" alt="Изображение"  width="150" height="150"/>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="{% url 'materials:view_material' object.pk %}" type="button"
+                               class="btn btn-sm btn-outline-success">View</a>
+                            <a href="{% url 'materials:edit_material' object.pk %}" type="button"
+                               class="btn btn-sm btn-outline-secondary">Edit</a>
+                            <a href="{% url 'materials:delete_material' object.pk %}" type="button"
+                               class="btn btn-sm btn-outline-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

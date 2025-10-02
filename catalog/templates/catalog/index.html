@@ -1,0 +1,33 @@
+{% extends 'catalog/base.html' %}
+{% load media_tag %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row text-start">
+        <div class="row">
+            {% for object in object_list %}
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img src="{% media_tag object.image.url %}" alt="Изображение" width="350" height="250"/>
+                    <div class="card-body">
+                        <p class="card-text">
+
+                            {% if object.is_active %}
+                            {{ object|title }}
+                            {% else %}
+                            <span class="text-muted">{{ object|title }}</span>
+                            {% endif %}
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'catalog/base.html' %}
+{% load media_tager %}
+{% block content %}
+<div class="row text-center">
+    <div class="col-sm-3 mb-6 mb-sm-0">
+        <div class="card" style="width: 28rem;">
+            <div class="card-body">
+                <img src="{% media_tager object.image %}" alt="Изображение"  width="250" height="250"/>
+                <h5 class="card-title">{{ object.title }}</h5>
+                <p class="card-text">{{ object.body }}</p>
+                <p class="card-text">Создано: {{ object.is_published }}</p>
+                <p class="card-text">Просмотров: {{ object.views_count }}</p>
+                <a href="{% url 'materials:list_material' %}" class="btn btn-primary">К списку статей</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
