@@ -10,7 +10,7 @@
                 <p class="card-text">{{ object.body }}</p>
                 <p class="card-text">Создано: {{ object.is_published }}</p>
                 <p class="card-text">Просмотров: {{ object.views_count }}</p>
-                <a href="{% url 'materials:list_material' %}" class="btn btn-primary">К списку статей</a>
+                <a href="{% url 'materials:material_list' %}" class="btn btn-primary">К списку статей</a>
             </div>
         </div>
     </div>

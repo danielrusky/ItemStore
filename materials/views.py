@@ -22,7 +22,7 @@ class MaterialListView(ListView):
 class MaterialCreateView(CreateView):
     model = Material
     fields = ('title', 'body', 'image',)
-    success_url = reverse_lazy('materials:list_material')
+    success_url = reverse_lazy('materials:material_list')
 
     def form_valid(self, form):
         if form.is_valid():
@@ -36,7 +36,7 @@ class MaterialCreateView(CreateView):
 class MaterialDetailView(DetailView):
     model = Material
     fields = ('title', 'body', 'image', 'is_published', 'views_count')
-    success_url = reverse_lazy('materials:list_material')
+    success_url = reverse_lazy('materials:material_list')
 
     def get_object(self, queryset=None):
         obj = super().get_object()
@@ -66,12 +66,12 @@ class MaterialUpdateView(UpdateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('materials:view_material', args=[self.kwargs.get('pk')])
+        return reverse('materials:material_view', args=[self.kwargs.get('pk')])
 
 
 class MaterialDeleteView(DeleteView):
     model = Material
-    success_url = reverse_lazy('materials:list_material')
+    success_url = reverse_lazy('materials:material_list')
 
 
 def toggle_active(request, slug):

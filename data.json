@@ -1,0 +1,652 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-10-03T05:00:45.386Z",
+    "user": 2,
+    "content_type": 6,
+    "object_id": "1",
+    "object_repr": "Porsche",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-10-03T05:01:22.238Z",
+    "user": 2,
+    "content_type": 6,
+    "object_id": "2",
+    "object_repr": "Nissan",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-10-03T05:01:51.681Z",
+    "user": 2,
+    "content_type": 6,
+    "object_id": "3",
+    "object_repr": "Toyota",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-10-03T05:02:11.160Z",
+    "user": 2,
+    "content_type": 6,
+    "object_id": "4",
+    "object_repr": "Ferrari",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2025-10-03T05:04:08.109Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Данила(+79775126865)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2025-10-03T05:04:38.799Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Эдуард(+79153687613)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2025-10-03T05:05:20.047Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Nissan GTR",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2025-10-03T05:05:59.120Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Nissan Silvia",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2025-10-03T05:06:53.551Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Nissan Z",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2025-10-03T05:07:40.134Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "Nissan Fairlady",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2025-10-03T05:08:18.429Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "Toyota Tundra",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2025-10-03T05:08:58.949Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "Toyota Mirai",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2025-10-03T05:09:43.667Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "7",
+    "object_repr": "Toyota Camry",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2025-10-03T05:10:26.981Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "8",
+    "object_repr": "Toyota GT86",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2025-10-03T05:11:22.410Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "9",
+    "object_repr": "Ferrari 296",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2025-10-03T05:11:33.168Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "9",
+    "object_repr": "Ferrari 296",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0426\\u0435\\u043d\\u0430\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2025-10-03T05:12:16.611Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "10",
+    "object_repr": "Ferrari Roma",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-10-03T05:13:15.822Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "11",
+    "object_repr": "Ferrari SF90",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-10-03T05:14:12.542Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "12",
+    "object_repr": "Ferrari Purosangue",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-10-03T05:14:48.854Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "13",
+    "object_repr": "Porsche Macan",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2025-10-03T05:15:51.576Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "14",
+    "object_repr": "Porsche 911 GT2",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2025-10-03T05:16:20.543Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "15",
+    "object_repr": "Porsche 718 Spyder",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2025-10-03T05:17:09.457Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "16",
+    "object_repr": "Porsche Panamera",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2025-10-03T05:26:30.875Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "16",
+    "object_repr": "Porsche Panamera",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2025-10-03T05:31:51.913Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "9",
+    "object_repr": "Ferrari 296",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2025-10-03T05:32:29.016Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "10",
+    "object_repr": "Ferrari Roma",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ljb8x8cyz4kpkg3h4gusq8p3c7bevqyt",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGln-20tJzxmsjXdNAiiW4qRC3B0ipYD2zcx7iYzbOuat85InEmdhxOl3G7A8eN4B3XG-NVnavC7TIHdFHrTLayN-Xg7372DEPn5rHyqwr5WAbY0QDChXnEbUUIEo2aicTtFHUBg4MKEDA1QqplSiseL9AeVAN9U:1v4Xov:3DXzyehjwxZLo0aD2AGvcaerjzI-Eiu_SoPETflfSOg",
+    "expire_date": "2025-10-17T04:55:05.757Z"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 1,
+  "fields": {
+    "name": "Porsche",
+    "description": "Porsche",
+    "image": "img/all_porsche_gGCKG6M.jpg",
+    "created_at": "2025-10-03T05:00:43Z"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 2,
+  "fields": {
+    "name": "Nissan",
+    "description": "Nissan",
+    "image": "img/all_nissan_tr0pTZM.jpg",
+    "created_at": "2025-10-03T05:01:21Z"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 3,
+  "fields": {
+    "name": "Toyota",
+    "description": "Toyota",
+    "image": "img/all_toyota_wXonr5f.jpg",
+    "created_at": "2025-10-03T05:01:50Z"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 4,
+  "fields": {
+    "name": "Ferrari",
+    "description": "Ferrari",
+    "image": "img/all_ferrari_XWqtaiY.jpg",
+    "created_at": "2025-10-03T05:02:10Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 1,
+  "fields": {
+    "name": "Nissan GTR",
+    "description": "Nissan GTR",
+    "image": "img/Nissan_Gtr_7wcdsAr.jpg",
+    "category": 2,
+    "price": 1453534534,
+    "date_created": "2025-10-03T05:05:20.044Z",
+    "date_modified": "2025-10-03T05:04:54Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 2,
+  "fields": {
+    "name": "Nissan Silvia",
+    "description": "Nissan Silvia",
+    "image": "img/Nissan_Silvia_aTDU9nm.jpg",
+    "category": 2,
+    "price": 456350534,
+    "date_created": "2025-10-03T05:05:59.118Z",
+    "date_modified": "2025-10-03T05:05:57Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 3,
+  "fields": {
+    "name": "Nissan Z",
+    "description": "Nissan Z",
+    "image": "img/Nissan_Z_Re6Uxlz.jpg",
+    "category": 2,
+    "price": 99099877,
+    "date_created": "2025-10-03T05:06:53.549Z",
+    "date_modified": "2025-10-03T05:06:51Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 4,
+  "fields": {
+    "name": "Nissan Fairlady",
+    "description": "Nissan Fairlady",
+    "image": "img/Nissan_Fairlady_NbTTgbJ.jpg",
+    "category": 2,
+    "price": 997767656,
+    "date_created": "2025-10-03T05:07:40.132Z",
+    "date_modified": "2025-10-03T05:07:39Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 5,
+  "fields": {
+    "name": "Toyota Tundra",
+    "description": "Toyota Tundra",
+    "image": "img/Toyota_Tundra_QKQjThh.jpg",
+    "category": 3,
+    "price": 76127890,
+    "date_created": "2025-10-03T05:08:18.426Z",
+    "date_modified": "2025-10-03T05:08:16Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 6,
+  "fields": {
+    "name": "Toyota Mirai",
+    "description": "Toyota Mirai",
+    "image": "img/Toyota_Mirai_yJgZTa8.jpg",
+    "category": 3,
+    "price": 888897655,
+    "date_created": "2025-10-03T05:08:58.947Z",
+    "date_modified": "2025-10-03T05:08:55Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 7,
+  "fields": {
+    "name": "Toyota Camry",
+    "description": "Toyota Camry",
+    "image": "img/Toyota_Camry_pyZOiWu.jpg",
+    "category": 3,
+    "price": 112298986,
+    "date_created": "2025-10-03T05:09:43.665Z",
+    "date_modified": "2025-10-03T05:09:42Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 8,
+  "fields": {
+    "name": "Toyota GT86",
+    "description": "Toyota GT86",
+    "image": "img/Toyota_Gt86_wRC2kdZ.jpg",
+    "category": 3,
+    "price": 765644343,
+    "date_created": "2025-10-03T05:10:26.979Z",
+    "date_modified": "2025-10-03T05:10:25Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 9,
+  "fields": {
+    "name": "Ferrari 296",
+    "description": "Ferrari 296",
+    "image": "img/Ferrari_296_Trekuyq.jpg",
+    "category": 4,
+    "price": 544554677,
+    "date_created": "2025-10-03T05:11:22.407Z",
+    "date_modified": "2025-10-03T05:11:06Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 10,
+  "fields": {
+    "name": "Ferrari Roma",
+    "description": "Ferrari Roma",
+    "image": "img/Ferrari_Roma_kChnlzA.jpg",
+    "category": 4,
+    "price": 773354554,
+    "date_created": "2025-10-03T05:12:16.609Z",
+    "date_modified": "2025-10-03T05:11:06Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 11,
+  "fields": {
+    "name": "Ferrari SF90",
+    "description": "Ferrari SF90",
+    "image": "img/Ferrari_Sf90_Dv19vsz.jpg",
+    "category": 4,
+    "price": 664345645,
+    "date_created": "2025-10-03T05:13:15.820Z",
+    "date_modified": "2025-10-03T05:11:06Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 12,
+  "fields": {
+    "name": "Ferrari Purosangue",
+    "description": "Ferrari Purosangue",
+    "image": "img/Ferrari_Purosangue_odpdEBL.jpg",
+    "category": 4,
+    "price": 9999999,
+    "date_created": "2025-10-03T05:14:12.540Z",
+    "date_modified": "2025-10-03T05:11:06Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 13,
+  "fields": {
+    "name": "Porsche Macan",
+    "description": "Porsche Macan",
+    "image": "img/Porsche_Macan_bYBICSx.jpg",
+    "category": 1,
+    "price": 19843565,
+    "date_created": "2025-10-03T05:14:48.852Z",
+    "date_modified": "2025-10-03T05:14:47Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 14,
+  "fields": {
+    "name": "Porsche 911 GT2",
+    "description": "Porsche 911 GT2",
+    "image": "img/Porsche_911_Gt2_nu1AaAa.jpg",
+    "category": 1,
+    "price": 898454565,
+    "date_created": "2025-10-03T05:15:51.574Z",
+    "date_modified": "2025-10-03T05:14:47Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 15,
+  "fields": {
+    "name": "Porsche 718 Spyder",
+    "description": "Porsche 718 Spyder",
+    "image": "img/Porsche_718_Spyder_dMpPZal.jpg",
+    "category": 1,
+    "price": 418345348,
+    "date_created": "2025-10-03T05:16:20.541Z",
+    "date_modified": "2025-10-03T05:16:19Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 16,
+  "fields": {
+    "name": "Porsche Panamera",
+    "description": "Porsche Panamera",
+    "image": "img/Porsche_Panamera_DSJsao0.jpg",
+    "category": 1,
+    "price": 77189865,
+    "date_created": "2025-10-03T05:17:09.455Z",
+    "date_modified": "2025-10-03T05:17:08Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.contacts",
+  "pk": 1,
+  "fields": {
+    "name": "Данила",
+    "phone": "+79775126865",
+    "message": "Hello!",
+    "avatar": ""
+  }
+},
+{
+  "model": "catalog.contacts",
+  "pk": 2,
+  "fields": {
+    "name": "Эдуард",
+    "phone": "+79153687613",
+    "message": "Ytrol",
+    "avatar": ""
+  }
+},
+{
+  "model": "users.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$KnUP1YAt2pwRAoRw5CMROz$306I08m6R4cS4KTUXPrD504zrVRpu+sCqQLMznUEc+o=",
+    "last_login": "2025-10-03T04:55:05.755Z",
+    "is_superuser": true,
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-10-03T04:54:27.069Z",
+    "email": "admin@admin.admin",
+    "avatar": "",
+    "phone": null,
+    "country": null,
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
