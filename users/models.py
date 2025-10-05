@@ -6,11 +6,12 @@ from materials.models import NULLABLE
 
 class User(AbstractUser):
     username = None
-    email = models.EmailField(max_length=255, unique=True)
-
-    avatar = models.ImageField(upload_to='avatars', verbose_name='Аватар', **NULLABLE)
-    phone = models.CharField(max_length=255, **NULLABLE, verbose_name='Телефон')
-    country = models.CharField(max_length=255, **NULLABLE, verbose_name='Страна')
+    email = models.EmailField(unique=True, verbose_name='Имейл')
+    phone = models.CharField(max_length=25, verbose_name='Телефон', **NULLABLE)
+    avatar = models.ImageField(upload_to='users/', verbose_name='Аватар', **NULLABLE)
+    country = models.CharField(max_length=50, verbose_name='Страна', **NULLABLE)
+    email_confirmed = models.BooleanField(default=False)
+    token = models.CharField(max_length=255, **NULLABLE)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
