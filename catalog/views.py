@@ -1,8 +1,16 @@
+from typing import Any
+
+from django.core.cache import cache
+from django.db.models.base import Model as Model
+from django.db.models.query import QuerySet
+from django.http import Http404
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, TemplateView, ListView, DeleteView, DetailView
-from typing import Any
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from catalog.models import Product, Category, Contacts
+from catalog.services import get_category_list
+from config import settings
 
 
 class ProductListView(ListView):
@@ -20,7 +28,7 @@ class ProductListView(ListView):
         return queryset
 
 
-class ProductCreateView(CreateView):
+class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
     fields = ('name', 'description', 'price', 'image', 'category')
     success_url = reverse_lazy('catalog:list_product')
@@ -37,7 +45,7 @@ class ProductCreateView(CreateView):
         return super().form_valid(form)
 
 
-class ProductUpdateView(UpdateView):
+class ProductUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     model = Product
     fields = ('name', 'description', 'price', 'image', 'category')
     success_url = reverse_lazy('catalog:list_product')
@@ -50,17 +58,50 @@ class ProductDetailView(DetailView):
     }
     template_name = 'catalog/product_detail.html'
 
+    def get_context_data(self, **kwargs: Any):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = get_category_list()
+        if settings.CACHE_ENABLED:
+            key = f'last_{self.object.pk}'
+            last = cache.get(key)
+            if last is None:
+                list = self.object.version_set.all()
+                last = sorted(list, key=lambda x: x.add_date, reverse=True)[0]
+                cache.set(key, last)
+        else:
+            list = self.object.version_set.all()
+            last = sorted(list, key=lambda x: x.add_date, reverse=True)[0]
 
-class ProductDeleteView(DeleteView):
+        context["last"] = last
+        return context
+
+    def get_object(self, queryset: QuerySet[Any] | None = ...) -> Model:
+        if settings.CACHE_ENABLED:
+            key = f'object_{self.kwargs["pk"]}'
+            object = cache.get(key)
+            if object is None:
+                object = Product.objects.get(pk=self.kwargs['pk'])
+                cache.set(key, object)
+        else:
+            object = Product.objects.get(pk=self.kwargs['pk'])
+        return object
+
+
+class ProductDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     model = Product
     success_url = reverse_lazy('catalog:list_product')
 
-    def form_invalid(self, form):
-        response = super().form_invalid(form)
-        if self.request.accepts('text/html'):
-            return response
-        else:
-            return super().form_valid(form.errors)
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        if self.object.user != self.request.user:
+            raise Http404
+
+        return self.object
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context['categories'] = get_category_list()
+        return context
 
 
 class CategoryListView(ListView):
@@ -141,5 +182,3 @@ class ProductAuth(TemplateView):
 
     def post(self, request, *args, **kwargs):
         return render(request, "catalog/need.html")
-
-
