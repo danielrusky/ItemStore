@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 NULLABLE = {'null': True, 'blank': True}
 
@@ -48,3 +49,16 @@ class Contacts(models.Model):
         verbose_name = 'Контакт'
         verbose_name_plural = 'Контакты'
         ordering = ('phone',)
+
+
+class Version(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    v_number = models.IntegerField(default=1)
+    v_name = models.CharField(max_length=100, default="changed")
+    current = models.BooleanField(default=True)
+    add_date = models.DateTimeField(default=datetime.datetime.now)
+
+    class Meta:
+        verbose_name = "Версия"
+        verbose_name_plural = "Версии"
+        ordering = ("v_name",)

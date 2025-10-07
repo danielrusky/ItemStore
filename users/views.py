@@ -1,15 +1,7 @@
-from django.conf import settings
+import secrets
+import string
+
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.tokens import default_token_generator
-from django.core.mail import send_mail
-from django.shortcuts import redirect, render
-from django.urls import reverse_lazy, reverse
-from django.views.generic import CreateView, UpdateView
-
-from users.forms import UserRegisterForm, UserProfileForm
-from users.models import User
-import random
-
 from django.contrib import messages
 from django.contrib.sites.shortcuts import get_current_site
 from django.shortcuts import redirect, render
@@ -21,7 +13,7 @@ from config import settings
 from django.conf import settings
 from django.core.mail import send_mail, EmailMessage
 from django.urls import reverse_lazy, reverse
-from django.views.generic import CreateView, UpdateView, FormView
+from django.views.generic import CreateView, UpdateView, FormView, TemplateView
 from users.forms import UserRegisterForm, UserProfileForm
 from users.models import User
 from django.contrib.auth.tokens import default_token_generator
@@ -35,24 +27,25 @@ class RegisterView(CreateView):
     success_url = reverse_lazy('users:login')
 
     def form_valid(self, form):
-        user = form.save()
-        verify_token = default_token_generator.make_token(user)
-        user.token = verify_token
-        user.is_active = False
-        user.save()
-        self.send_email_verify(self.request, user, verify_token)
+        new_user = form.save()
+        # Генерируем уникальный код, например, UUID
+        import uuid
+        verification_code = str(uuid.uuid4())
+        new_user.verification_code = verification_code
+        new_user.save()
 
+        # Генерируем полный URL для активации
+        activation_path = reverse('users:verify_email', kwargs={'token': verification_code})
+        activation_url = self.request.build_absolute_uri(activation_path)
+
+        send_mail(
+            subject='Активация аккаунта на нашей платформе',
+            message=f'Ссылка для активации учетной записи: {activation_url}',
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=[new_user.email],
+            fail_silently=False,
+        )
         return super().form_valid(form)
-
-    @staticmethod
-    def send_email_verify(request, user, token):
-        current_site = get_current_site(request)
-        user.save()
-        context = {"user": user, "domain": current_site.domain, "uid": urlsafe_base64_encode(force_bytes(user.pk)),
-                   "token": token}
-        message = render_to_string("users/email_verify.html", context)
-        email = EmailMessage(subject="Verification", body=message, to=[user.email])
-        email.send()
 
 
 class ProfileView(LoginRequiredMixin, UpdateView):
@@ -65,64 +58,38 @@ class ProfileView(LoginRequiredMixin, UpdateView):
 
 
 def generate_new_password(request):
-    new_password = User.objects.make_random_password()
+    new_password = create_secret_key(12)
     request.user.set_password(new_password)
     request.user.save()
     send_mail(
-        subject='Смена пароля в BestStoreEver',
-        message=f'Ваш новый пароль для BestStoreEver: {new_password}',
+        subject='Вы сменили пароль из профиля',
+        message=f'Новый пароль {new_password}',
         from_email=settings.EMAIL_HOST_USER,
         recipient_list=[request.user.email]
     )
-    messages.success(request, 'Вам на почту отправлено письмо с новым паролем')
-    return redirect(reverse('catalog:home'))
+    return redirect(reverse_lazy('users:login'))
 
 
-def forgot_password(request):
-    if request.method == 'POST':
-        email = request.POST.get('email')
-        print(email)
+def create_secret_key(length):
+    combination = string.ascii_letters + string.digits
+    secret_key = ''.join(secrets.choice(combination) for _ in range(length))
+    return secret_key
 
+
+class VerifyEmail(View):
+    def get(self, request, token):
         try:
-            user = User.objects.get(email=email)
-            new_password = User.objects.make_random_password()
-            send_mail(
-                subject='Смена пароля в BestStoreEver',
-                message=f'Ваш новый пароль для BestStoreEver: {new_password}',
-                from_email=settings.EMAIL_HOST_USER,
-                recipient_list=[user.email]
-            )
-            messages.success(request, 'Вам на почту отправлено письмо с новым паролем')
-            user.set_password(new_password)
-            user.save()
-            return redirect(reverse('catalog:home'))
-
-        except Exception as e:
-            message = f"Пользователь с такими имейлом не найден"
-            context = {'message': message}
-            return render(request, 'users/forgot_password.html', context)
-
-    else:
-        return render(request, 'users/forgot_password.html')
-
-
-class EmailVerifyView(View):
-    def get(self, request, uidb64=None, token=None):
-        user = self.get_user_by_uidb64(uidb64)
-        print(user)
-        print(user.token)
-        if user is not None and user.token == token:
-            user.email_confirmed = True
+            user = User.objects.get(verification_code=token)
             user.is_active = True
             user.save()
-            login(request, user)
-            return redirect('catalog:home')
-        else:
-            return redirect(reverse('users:login'))
+            return redirect('users:success_verify')
+        except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+            return redirect('users:error_verify')
 
-    @staticmethod
-    def get_user_by_uidb64(uidb64):
-        uid = urlsafe_base64_decode(uidb64)
-        uid_str = force_str(uid)
-        user = User.objects.get(pk=int(uid_str))
-        return user
+
+class SuccessVerifyView(TemplateView):
+    template_name = 'users/success_verify.html'
+
+
+class ErrorVerifyView(TemplateView):
+    template_name = 'users/error_verify.html'

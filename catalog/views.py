@@ -1,8 +1,7 @@
-from django.http import JsonResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, TemplateView, ListView, DeleteView, DetailView
-
+from typing import Any
 from catalog.models import Product, Category, Contacts
 
 
@@ -126,3 +125,21 @@ class ContactsView(TemplateView):
         Contacts.objects.create(name=name, phone=phone, message=message)
         print(f'name: {name}, phone: {phone}, message: {message}')
         return render(request, 'catalog/contacts.html', self.extra_context, {'contacts': Contacts.objects.get(pk=1)})
+
+
+class ProductThanks(TemplateView):
+    model = Product
+    http_method_names = ["post"]
+
+    def post(self, request, *args, **kwards):
+        return render(request, "catalog/thanks.html")
+
+
+class ProductAuth(TemplateView):
+    model = Product
+    http_method_names = ["post", "get"]
+
+    def post(self, request, *args, **kwargs):
+        return render(request, "catalog/need.html")
+
+

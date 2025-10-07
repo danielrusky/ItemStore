@@ -14,7 +14,6 @@
                 <div class="card-body">
                     {% csrf_token %}
                     {% crispy form %}
-                    {{ form.as_p }}
                     <button type="submit" class="btn btn-success">Регистрация</button>
                 </div>
                 <div class="card-footer"></div>
