@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "catalog",
     "materials",
     'users',
+    'education',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"

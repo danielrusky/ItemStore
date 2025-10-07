@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Шаблон с боковой панелью</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Свои стили -->
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: row;
+    }
+    /* Боковая панель */
+    #sidebar {
+      min-width: 250px;
+      max-width: 250px;
+      background-color: #343a40; /* темный фон */
+    }
+    /* Контент */
+    #content {
+      flex: 1; /* занимает оставшееся пространство */
+      padding: 20px;
+    }
+    /* Стили для ссылок меню */
+    #sidebar .nav-link {
+      color: #fff;
+    }
+    #sidebar .nav-link:hover {
+      background-color: #495057;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Боковая панель -->
+  <nav id="sidebar" class="d-flex flex-column p-3">
+    <h4 class="text-white mb-3">Меню</h4>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="#" class="nav-link active" aria-current="page">
+          Главная
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">
+          Профиль
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">
+          Настройки
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">
+          Выход
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Основной контент -->
+  <div id="content">
+    <h1>Добро пожаловать!</h1>
+    <p>Это пример шаблона с боковой панелью.</p>
+    <!-- Можно добавлять любой контент сюда -->
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Свои скрипты -->
+  <script src="js/main.js"></script>
+</body>
+</html>
